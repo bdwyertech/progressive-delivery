@@ -19,21 +19,16 @@ const _ = grpc.SupportPackageIsVersion7
 // For semantics around ctx use and closing/ending streaming RPCs, please refer to https://pkg.go.dev/google.golang.org/grpc/?tab=doc#ClientConn.NewStream.
 type ProgressiveDeliveryServiceClient interface {
 	GetVersion(ctx context.Context, in *GetVersionRequest, opts ...grpc.CallOption) (*GetVersionResponse, error)
-	//
 	// ListCanaries returns with a list of Canary objects.
 	ListCanaries(ctx context.Context, in *ListCanariesRequest, opts ...grpc.CallOption) (*ListCanariesResponse, error)
-	//
 	// GetCanary returns a Canary object.
 	GetCanary(ctx context.Context, in *GetCanaryRequest, opts ...grpc.CallOption) (*GetCanaryResponse, error)
-	//
 	// IsFlaggerAvailable returns with a hashmap where the keys are the names of
 	// the clusters, and the value is a boolean indicating whether Flagger is
 	// installed or not on that cluster.
 	IsFlaggerAvailable(ctx context.Context, in *IsFlaggerAvailableRequest, opts ...grpc.CallOption) (*IsFlaggerAvailableResponse, error)
-	//
 	// ListCanaries returns with a list of Canary objects.
 	ListMetricTemplates(ctx context.Context, in *ListMetricTemplatesRequest, opts ...grpc.CallOption) (*ListMetricTemplatesResponse, error)
-	//
 	// ListCanaryObjects returns with a list of related objects for a Canary
 	// objects.
 	ListCanaryObjects(ctx context.Context, in *ListCanaryObjectsRequest, opts ...grpc.CallOption) (*ListCanaryObjectsResponse, error)
@@ -106,21 +101,16 @@ func (c *progressiveDeliveryServiceClient) ListCanaryObjects(ctx context.Context
 // for forward compatibility
 type ProgressiveDeliveryServiceServer interface {
 	GetVersion(context.Context, *GetVersionRequest) (*GetVersionResponse, error)
-	//
 	// ListCanaries returns with a list of Canary objects.
 	ListCanaries(context.Context, *ListCanariesRequest) (*ListCanariesResponse, error)
-	//
 	// GetCanary returns a Canary object.
 	GetCanary(context.Context, *GetCanaryRequest) (*GetCanaryResponse, error)
-	//
 	// IsFlaggerAvailable returns with a hashmap where the keys are the names of
 	// the clusters, and the value is a boolean indicating whether Flagger is
 	// installed or not on that cluster.
 	IsFlaggerAvailable(context.Context, *IsFlaggerAvailableRequest) (*IsFlaggerAvailableResponse, error)
-	//
 	// ListCanaries returns with a list of Canary objects.
 	ListMetricTemplates(context.Context, *ListMetricTemplatesRequest) (*ListMetricTemplatesResponse, error)
-	//
 	// ListCanaryObjects returns with a list of related objects for a Canary
 	// objects.
 	ListCanaryObjects(context.Context, *ListCanaryObjectsRequest) (*ListCanaryObjectsResponse, error)

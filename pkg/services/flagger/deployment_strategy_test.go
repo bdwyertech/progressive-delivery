@@ -6,7 +6,7 @@ import (
 
 	"github.com/fluxcd/flagger/pkg/apis/flagger/v1beta1"
 	"github.com/fluxcd/flagger/pkg/apis/istio/common/v1alpha1"
-	"github.com/fluxcd/flagger/pkg/apis/istio/v1alpha3"
+	iv1beta1 "github.com/fluxcd/flagger/pkg/apis/istio/v1beta1"
 	"github.com/stretchr/testify/assert"
 	"github.com/weaveworks/progressive-delivery/pkg/services/flagger"
 )
@@ -28,7 +28,7 @@ func TestFlagger_DeploymentStrategyFor_Canary(t *testing.T) {
 				StepWeight:          10,
 				Threshold:           10,
 				StepWeightPromotion: 10,
-				Match:               []v1alpha3.HTTPMatchRequest{},
+				Match:               []iv1beta1.HTTPMatchRequest{},
 			},
 			SkipAnalysis: false,
 		},
@@ -54,7 +54,7 @@ func TestFlagger_DeploymentStrategyFor_BlueGreen(t *testing.T) {
 				StepWeight:          10,
 				Threshold:           10,
 				StepWeightPromotion: 10,
-				Match:               []v1alpha3.HTTPMatchRequest{},
+				Match:               []iv1beta1.HTTPMatchRequest{},
 			},
 			SkipAnalysis: false,
 		},
@@ -80,7 +80,7 @@ func TestFlagger_DeploymentStrategyFor_BlueGreenMirror(t *testing.T) {
 				StepWeight:          10,
 				Threshold:           10,
 				StepWeightPromotion: 10,
-				Match:               []v1alpha3.HTTPMatchRequest{},
+				Match:               []iv1beta1.HTTPMatchRequest{},
 			},
 			SkipAnalysis: false,
 		},
@@ -106,7 +106,7 @@ func TestFlagger_DeploymentStrategyFor_ABTesting(t *testing.T) {
 				StepWeight:          10,
 				Threshold:           10,
 				StepWeightPromotion: 10,
-				Match: []v1alpha3.HTTPMatchRequest{
+				Match: []iv1beta1.HTTPMatchRequest{
 					{
 						Headers: map[string]v1alpha1.StringMatch{
 							"x-canary": {Regex: "^(.*?;)?(canary=always)(;.*)?$"},

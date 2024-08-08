@@ -14,6 +14,7 @@ import (
 	"github.com/weaveworks/weave-gitops/core/clustersmngr/cluster"
 	"github.com/weaveworks/weave-gitops/core/clustersmngr/fetcher"
 	"github.com/weaveworks/weave-gitops/core/nsaccess/nsaccessfakes"
+	wkube "github.com/weaveworks/weave-gitops/pkg/kube"
 	"github.com/weaveworks/weave-gitops/pkg/server/auth"
 	"github.com/weaveworks/weave-gitops/pkg/testutils"
 	"google.golang.org/grpc"
@@ -98,6 +99,7 @@ func RestConfigToCluster(cfg *rest.Config) (cluster.Cluster, error) {
 		cluster.DefaultCluster,
 		cfg,
 		kube.CreateScheme(),
+		wkube.UserPrefixes{},
 		cluster.DefaultKubeConfigOptions...,
 	)
 }

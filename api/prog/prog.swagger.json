@@ -332,6 +332,7 @@
         "metrics": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/CanaryMetric"
           }
         }
@@ -440,6 +441,7 @@
         "conditions": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/CanaryCondition"
           }
         }
@@ -564,6 +566,7 @@
         "canaries": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Canary"
           }
         },
@@ -573,6 +576,7 @@
         "errors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/ListError"
           }
         }
@@ -584,12 +588,14 @@
         "objects": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/UnstructuredObject"
           }
         },
         "errors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/ListError"
           }
         }
@@ -615,6 +621,7 @@
         "templates": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/CanaryMetricTemplate"
           }
         },
@@ -624,6 +631,7 @@
         "errors": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/ListError"
           }
         }
@@ -679,6 +687,7 @@
         "conditions": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/Condition"
           }
         },
@@ -719,6 +728,7 @@
         "details": {
           "type": "array",
           "items": {
+            "type": "object",
             "$ref": "#/definitions/protobufAny"
           }
         }

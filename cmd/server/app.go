@@ -23,6 +23,7 @@ import (
 	"github.com/weaveworks/weave-gitops/core/clustersmngr/fetcher"
 	"github.com/weaveworks/weave-gitops/core/logger"
 	"github.com/weaveworks/weave-gitops/core/nsaccess/nsaccessfakes"
+	wkube "github.com/weaveworks/weave-gitops/pkg/kube"
 	"github.com/weaveworks/weave-gitops/pkg/server/auth"
 	"google.golang.org/grpc"
 	"google.golang.org/grpc/reflection"
@@ -77,7 +78,7 @@ func serve(cfg *appConfig) error {
 
 	scheme := kube.CreateScheme()
 
-	cl, err := cluster.NewSingleCluster(cluster.DefaultCluster, restCfg, scheme, cluster.DefaultKubeConfigOptions...)
+	cl, err := cluster.NewSingleCluster(cluster.DefaultCluster, restCfg, scheme, wkube.UserPrefixes{}, cluster.DefaultKubeConfigOptions...)
 	if err != nil {
 		return fmt.Errorf("unable to create single cluster: %w", err)
 	}

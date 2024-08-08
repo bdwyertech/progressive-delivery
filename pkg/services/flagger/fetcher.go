@@ -411,8 +411,8 @@ func meshProviderObjectKinds(provider string) []schema.GroupVersionKind {
 		}
 	case flaggerv1.IstioProvider:
 		kinds = []schema.GroupVersionKind{
-			{Group: "networking.istio.io", Version: "v1alpha3", Kind: "destinationrule"},
-			{Group: "networking.istio.io", Version: "v1alpha3", Kind: "virtualservice"},
+			{Group: "networking.istio.io", Version: "v1beta1", Kind: "destinationrule"},
+			{Group: "networking.istio.io", Version: "v1beta1", Kind: "virtualservice"},
 		}
 	case flaggerv1.ContourProvider:
 		kinds = []schema.GroupVersionKind{
